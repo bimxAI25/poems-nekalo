@@ -19,7 +19,9 @@
     var stanzas = p.stanzas || [];
     for (var i = 0; i < stanzas.length; i++) {
       var last = (i === stanzas.length - 1);
-      var lines = stanzas[i].map(esc).join('<br/>');
+      var lines = stanzas[i].map(function (l) {
+        return '<span class="poem-line block whitespace-nowrap">' + esc(l) + '</span>';
+      }).join('');
       body += '<p class="' + (last ? 'italic opacity-90' : '') + '">' + lines + '</p>';
       if (i === 2 && stanzas.length > 4) {
         body += '<div class="my-10 flex items-center justify-center">'
@@ -29,11 +31,35 @@
               + '</div>';
       }
     }
-    return '<div class="w-full flex-shrink-0 p-8 md:p-12 relative min-h-[500px] flex flex-col justify-center">'
+    return '<div class="w-full flex-shrink-0 py-10 px-14 md:p-12 relative min-h-[500px] flex flex-col justify-center">'
          + '<div class="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">'
          + '<span class="material-symbols-outlined" style="font-size:200px">' + esc(p.motif || 'terrain') + '</span></div>'
-         + '<div class="relative z-10 space-y-8 font-poem-body text-poem-body leading-relaxed text-on-surface/90">'
+         + '<div class="poem-text relative z-10 space-y-8 font-poem-body text-poem-body leading-relaxed text-on-surface/90">'
          + body + '</div></div>';
+  }
+
+  // Shrink the poem font on narrow screens so each line fits on one row,
+  // exactly like the desktop layout. Desktop columns are wide enough that
+  // nothing overflows, so the font stays at its default size there.
+  function fit() {
+    if (!track) return;
+    var slides = track.children;
+    for (var s = 0; s < slides.length; s++) {
+      var box = slides[s].querySelector('.poem-text');
+      if (!box) continue;
+      box.style.fontSize = '';
+      var avail = box.clientWidth;
+      if (!avail) continue;
+      var lines = box.getElementsByClassName('poem-line');
+      var widest = 0;
+      for (var i = 0; i < lines.length; i++) {
+        if (lines[i].scrollWidth > widest) widest = lines[i].scrollWidth;
+      }
+      if (widest > avail + 1) {
+        var base = parseFloat(window.getComputedStyle(box).fontSize) || 20;
+        box.style.fontSize = (base * avail / widest) + 'px';
+      }
+    }
   }
 
   function render() {
@@ -62,6 +88,12 @@
     }
     dotsBox.innerHTML = dots;
     update();
+    fit();
+  }
+
+  window.addEventListener('resize', fit);
+  if (window.document.fonts && window.document.fonts.ready) {
+    window.document.fonts.ready.then(fit);
   }
 
   function update() {
