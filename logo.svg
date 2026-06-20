@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Nohchicho emblem: a wolf beneath nine stars">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d676"/>
+      <stop offset="1" stop-color="#e9c349"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Badge -->
+  <circle cx="120" cy="120" r="116" fill="#0b2b26"/>
+  <circle cx="120" cy="120" r="116" fill="none" stroke="#e9c349" stroke-opacity="0.55" stroke-width="3"/>
+  <circle cx="120" cy="120" r="104" fill="none" stroke="#e9c349" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- Nine stars in an arc across the top -->
+  <g fill="url(#gold)">
+    <g id="star" transform="translate(120,40)">
+      <path d="M0,-7 L1.7,-2.2 L6.7,-2.2 L2.6,0.9 L4.2,5.8 L0,2.8 L-4.2,5.8 L-2.6,0.9 L-6.7,-2.2 L-1.7,-2.2 Z"/>
+    </g>
+    <use href="#star" transform="rotate(-20 120 120)"/>
+    <use href="#star" transform="rotate(-40 120 120)"/>
+    <use href="#star" transform="rotate(-60 120 120)"/>
+    <use href="#star" transform="rotate(20 120 120)"/>
+    <use href="#star" transform="rotate(40 120 120)"/>
+    <use href="#star" transform="rotate(60 120 120)"/>
+    <use href="#star" transform="rotate(-80 120 120)"/>
+    <use href="#star" transform="rotate(80 120 120)"/>
+  </g>
+
+  <!-- Crescent moon (subtle, upper right behind wolf) -->
+  <path d="M176 70 a26 26 0 1 0 18 44 a20 20 0 1 1 -18 -44 Z" fill="#e9c349" fill-opacity="0.14"/>
+
+  <!-- Standing wolf silhouette, facing left -->
+  <g fill="#accdc5">
+    <path d="M46 121
+             C 52 119, 58 117, 62 113
+             L 60 96 L 70 109
+             L 80 95 L 87 110
+             C 92 112, 96 115, 99 119
+             C 116 112, 138 111, 156 116
+             C 159 110, 162 103, 161 96
+             C 165 100, 168 106, 168 112
+             C 174 114, 180 118, 184 124
+             C 188 130, 188 137, 184 142
+             C 182 145, 178 145, 176 142
+             L 174 134
+             L 172 145 L 172 173 L 164 173 L 165 145
+             C 160 147, 154 148, 148 147
+             L 132 146
+             C 128 146, 124 146, 120 145
+             L 120 173 L 112 173 L 113 143
+             C 108 141, 104 138, 101 134
+             L 100 145 L 100 173 L 92 173 L 93 143
+             C 88 139, 85 133, 84 127
+             C 78 127, 72 126, 67 123
+             C 60 127, 52 128, 46 126
+             C 44 125, 44 122, 46 121 Z"/>
+  </g>
+</svg>

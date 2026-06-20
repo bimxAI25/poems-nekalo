@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anthology Reader | Nohchicho</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/>
+<link rel="apple-touch-icon" href="assets/favicon-180.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+body { background-color: #121411; color: #e3e3de; -webkit-font-smoothing: antialiased; }
+.grain-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 999; opacity: 0.03; background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); }
+</style>
+<script id="tailwind-config">
+tailwind.config = { darkMode: "class", theme: { extend: {
+  colors: { "secondary":"#e9c349","on-secondary":"#3c2f00","surface-container":"#1e201d","surface-container-high":"#292a27","surface":"#121411","primary":"#accdc5","surface-container-low":"#1a1c19","on-surface":"#e3e3de","background":"#121411","on-surface-variant":"#c1c8c5","primary-container":"#0b2b26","on-tertiary-container":"#8e8d8c","outline":"#8b9290","surface-container-lowest":"#0d0f0c","on-background":"#e3e3de" },
+  borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px" },
+  spacing: { "margin-mobile":"16px","margin-desktop":"64px","unit":"8px","gutter":"24px","container-max":"1200px" },
+  fontFamily: { "poem-title":["Source Serif 4"],"ui-label-sm":["Hanken Grotesk"],"body-main":["Hanken Grotesk"],"ui-label-lg":["Hanken Grotesk"],"poem-body":["Source Serif 4"],"display-lg":["Source Serif 4"],"display-lg-mobile":["Source Serif 4"] },
+  fontSize: { "poem-title":["36px",{"lineHeight":"44px","fontWeight":"600"}],"ui-label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.1em","fontWeight":"500"}],"body-main":["16px",{"lineHeight":"24px","fontWeight":"400"}],"ui-label-lg":["16px",{"lineHeight":"24px","letterSpacing":"0.05em","fontWeight":"600"}],"poem-body":["20px",{"lineHeight":"32px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["32px",{"lineHeight":"40px","fontWeight":"700"}] }
+} } };
+</script>
+</head>
+<body class="font-body-main selection:bg-secondary selection:text-on-secondary">
+<div class="grain-overlay"></div>
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-secondary/20">
+<div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<a href="index.html"><img alt="Logo" class="w-10 h-10 rounded-full border border-secondary/30" src="assets/logo.svg"/></a>
+<a href="index.html"><span class="font-display-lg text-display-lg-mobile tracking-tighter text-primary">NOHCHICHO</span></a>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">History</a>
+<a class="font-ui-label-lg text-ui-label-lg text-secondary" href="library.html">Library</a>
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="library.html">Authors</a>
+</nav>
+<div class="flex items-center gap-4">
+<a href="search.html"><span class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-all">search</span></a>
+<a href="library.html"><span class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-all">menu_book</span></a>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-40 px-margin-mobile md:px-margin-desktop max-w-[800px] mx-auto overflow-x-hidden">
+<section class="mb-16">
+<div class="flex flex-wrap items-center gap-3 mb-6" id="poemTags"></div>
+<h1 class="font-poem-title text-poem-title text-on-surface mb-4 leading-tight italic" id="poemTitle"></h1>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-l-2 border-secondary/40 pl-6 py-2">
+<div>
+<p class="font-ui-label-lg text-ui-label-lg text-secondary" id="poemAuthor"></p>
+<p class="font-ui-label-sm text-ui-label-sm text-on-surface-variant opacity-70" id="poemMeta"></p>
+</div>
+<button class="group flex items-center gap-3 bg-primary-container hover:bg-primary-container/80 text-primary border border-primary/20 px-6 py-3 rounded-full transition-all active:scale-95" id="audioControl">
+<span class="material-symbols-outlined transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-ui-label-lg text-ui-label-lg uppercase tracking-widest">Listen</span>
+</button>
+</div>
+</section>
+<div class="relative mb-16" id="poemSliderContainer">
+<div class="mb-8 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary opacity-50">search</span>
+<input class="w-full bg-surface-container-high border border-secondary/20 rounded-full py-3 pl-12 pr-6 text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-secondary/50 transition-all font-body-main" id="poemSearch" placeholder="Search within anthology..." type="text"/>
+</div>
+<div class="relative overflow-hidden rounded-xl border border-secondary/10 bg-surface-container-low">
+<div class="flex transition-transform duration-500 ease-out items-stretch" id="poemTrack"></div>
+<div class="hidden p-12 text-center text-on-surface-variant" id="poemEmpty">
+<span class="material-symbols-outlined text-5xl text-secondary/40 block mb-4">search_off</span>
+No poems match your search.
+</div>
+<button class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/40 backdrop-blur-md border border-secondary/30 text-secondary flex items-center justify-center hover:bg-secondary/20 transition-all z-20" id="prevBtn">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/40 backdrop-blur-md border border-secondary/30 text-secondary flex items-center justify-center hover:bg-secondary/20 transition-all z-20" id="nextBtn">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2" id="poemDots"></div>
+</div>
+</div>
+<section class="mt-20 p-8 rounded-xl bg-surface-container border border-secondary/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">history_edu</span>
+</div>
+<h3 class="font-ui-label-lg text-ui-label-lg text-secondary mb-4 uppercase tracking-tighter">Historical Context</h3>
+<p class="font-body-main text-body-main text-on-surface-variant leading-relaxed" id="poemContext"></p>
+</section>
+<div class="fixed bottom-24 right-8 z-40 flex flex-col gap-4" id="focusToggle">
+<button class="p-4 bg-secondary/10 hover:bg-secondary/20 text-secondary border border-secondary/30 rounded-full backdrop-blur-md transition-all" id="focusBtn" title="Toggle Focus Mode">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</main>
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop border-t border-secondary/10 bg-surface-container-lowest">
+<div class="flex flex-col items-center gap-8 text-center max-w-container-max mx-auto">
+<div class="mb-6 flex justify-center"><img alt="Nohchicho Emblem" class="w-16 h-16 rounded-full border border-secondary/20 opacity-80" src="assets/logo.svg"/></div><div class="font-display-lg text-display-lg-mobile text-secondary opacity-30">NOHCHICHO</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary transition-all" href="#">History</a>
+<a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary transition-all" href="#">Tradition</a>
+<a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary transition-all" href="library.html">Authors</a>
+<a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary transition-all" href="library.html">Archives</a>
+</div>
+<p class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container max-w-md">© 2024 Nohchicho Anthology. Dedicated to the resilience of the Chechen spirit.</p>
+</div>
+</footer>
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe bg-surface-container z-50">
+<a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">home</span>
+<span class="font-ui-label-sm text-ui-label-sm">Home</span>
+</a>
+<a href="library.html" class="flex flex-col items-center justify-center text-secondary font-bold transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_library</span>
+<span class="font-ui-label-sm text-ui-label-sm">Library</span>
+</a>
+<a href="search.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-ui-label-sm text-ui-label-sm">Favorites</span>
+</a>
+</nav>
+<script src="assets/poems.js"></script>
+<script src="assets/anthology.js"></script>
+</body></html>
