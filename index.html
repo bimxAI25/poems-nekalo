@@ -4,145 +4,49 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>NOHCHICHO ANTHOLOGY | Modern Heritage</title>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/>
-<link rel="apple-touch-icon" href="assets/favicon-180.png"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20240%20240%22%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%22120%22%20fill%3D%22%230b2b26%22%2F%3E%3Cg%20fill%3D%22%23e9c349%22%3E%3Cpath%20d%3D%22M120%2034%20l2.4%207.2%207.6%200%20-6.1%204.5%202.3%207.2%20-6.2-4.5%20-6.2%204.5%202.3-7.2%20-6.1-4.5%207.6%200z%22%2F%3E%3Cpath%20d%3D%22M74%2046%20l1.9%205.8%206.1%200%20-4.9%203.6%201.9%205.8%20-5-3.6%20-5%203.6%201.9-5.8%20-4.9-3.6%206.1%200z%22%2F%3E%3Cpath%20d%3D%22M166%2046%20l1.9%205.8%206.1%200%20-4.9%203.6%201.9%205.8%20-5-3.6%20-5%203.6%201.9-5.8%20-4.9-3.6%206.1%200z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23e9c349%22%20transform%3D%22translate%28120%2C138%29%20scale%281.5%29%20translate%28-120%2C-138%29%22%3E%3Cpath%20d%3D%22M46%20121%20C52%20119%2C58%20117%2C62%20113%20L60%2096%20L70%20109%20L80%2095%20L87%20110%20C92%20112%2C96%20115%2C99%20119%20C116%20112%2C138%20111%2C156%20116%20C159%20110%2C162%20103%2C161%2096%20C165%20100%2C168%20106%2C168%20112%20C174%20114%2C180%20118%2C184%20124%20C188%20130%2C188%20137%2C184%20142%20C182%20145%2C178%20145%2C176%20142%20L174%20134%20L172%20145%20L172%20173%20L164%20173%20L165%20145%20C160%20147%2C154%20148%2C148%20147%20L132%20146%20C128%20146%2C124%20146%2C120%20145%20L120%20173%20L112%20173%20L113%20143%20C108%20141%2C104%20138%2C101%20134%20L100%20145%20L100%20173%20L92%20173%20L93%20143%20C88%20139%2C85%20133%2C84%20127%20C78%20127%2C72%20126%2C67%20123%20C60%20127%2C52%20128%2C46%20126%20C44%20125%2C44%20122%2C46%20121%20Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .grain-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 99;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        .istang-pattern {
-            mask-image: radial-gradient(circle at center, black, transparent 80%);
-            opacity: 0.05;
-            background-image: repeating-conic-gradient(#d4af37 0% 25%, transparent 0% 50%);
-            background-size: 40px 40px;
-        }
-        .text-glow-gold {
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .grain-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 99; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+        .istang-pattern { mask-image: radial-gradient(circle at center, black, transparent 80%); opacity: 0.05; background-image: repeating-conic-gradient(#d4af37 0% 25%, transparent 0% 50%); background-size: 40px 40px; }
+        @keyframes float { 0% { transform: translateY(0px);} 50% { transform: translateY(-10px);} 100% { transform: translateY(0px);} }
+        .animate-float { animation: float 6s ease-in-out infinite; }
     </style>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-secondary-container": "#342800",
-                      "secondary": "#e9c349",
-                      "inverse-primary": "#46645e",
-                      "outline-variant": "#414846",
-                      "on-primary": "#173630",
-                      "on-secondary-fixed-variant": "#574500",
-                      "on-error-container": "#ffdad6",
-                      "on-secondary-fixed": "#241a00",
-                      "tertiary": "#c8c6c5",
-                      "on-primary-container": "#74948d",
-                      "surface-container": "#1e201d",
-                      "on-tertiary": "#313030",
-                      "surface-dim": "#121411",
-                      "error-container": "#93000a",
-                      "inverse-on-surface": "#2f312e",
-                      "tertiary-container": "#262626",
-                      "surface-container-high": "#292a27",
-                      "on-secondary": "#3c2f00",
-                      "surface": "#121411",
-                      "primary": "#accdc5",
-                      "surface-tint": "#accdc5",
-                      "inverse-surface": "#e3e3de",
-                      "surface-container-highest": "#333532",
-                      "secondary-container": "#af8d11",
-                      "surface-container-low": "#1a1c19",
-                      "on-primary-fixed-variant": "#2e4c46",
-                      "tertiary-fixed": "#e5e2e1",
-                      "on-surface": "#e3e3de",
-                      "primary-fixed-dim": "#accdc5",
-                      "background": "#121411",
-                      "on-surface-variant": "#c1c8c5",
-                      "primary-container": "#0b2b26",
-                      "on-tertiary-fixed": "#1c1b1b",
-                      "on-error": "#690005",
-                      "on-tertiary-container": "#8e8d8c",
-                      "secondary-fixed": "#ffe088",
-                      "on-primary-fixed": "#00201c",
-                      "tertiary-fixed-dim": "#c8c6c5",
-                      "primary-fixed": "#c8eae1",
-                      "outline": "#8b9290",
-                      "on-tertiary-fixed-variant": "#474746",
-                      "surface-variant": "#333532",
-                      "secondary-fixed-dim": "#e9c349",
-                      "surface-bright": "#383a36",
-                      "error": "#ffb4ab",
-                      "surface-container-lowest": "#0d0f0c",
-                      "on-background": "#e3e3de"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "margin-mobile": "16px",
-                      "margin-desktop": "64px",
-                      "unit": "8px",
-                      "gutter": "24px",
-                      "container-max": "1200px"
-              },
-              "fontFamily": {
-                      "poem-title": ["\"Source Serif 4\""],
-                      "ui-label-sm": ["Hanken Grotesk"],
-                      "body-main": ["Hanken Grotesk"],
-                      "ui-label-lg": ["Hanken Grotesk"],
-                      "poem-body": ["\"Source Serif 4\""],
-                      "display-lg": ["\"Source Serif 4\""],
-                      "display-lg-mobile": ["\"Source Serif 4\""]
-              },
-              "fontSize": {
-                      "poem-title": ["36px", {"lineHeight": "44px", "fontWeight": "600"}],
-                      "ui-label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
-                      "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "ui-label-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "poem-body": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
-                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
-              }
-            },
-          },
-        }
+        tailwind.config = { darkMode: "class", theme: { extend: {
+          colors: { "secondary":"#e9c349","on-secondary":"#3c2f00","tertiary":"#c8c6c5","on-primary-container":"#74948d","surface-container":"#1e201d","surface-container-high":"#292a27","surface":"#121411","primary":"#accdc5","secondary-container":"#af8d11","surface-container-low":"#1a1c19","on-surface":"#e3e3de","background":"#121411","on-surface-variant":"#c1c8c5","primary-container":"#0b2b26","on-tertiary-container":"#8e8d8c","outline":"#8b9290","surface-variant":"#333532","surface-container-lowest":"#0d0f0c","on-background":"#e3e3de" },
+          borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px" },
+          spacing: { "margin-mobile":"16px","margin-desktop":"64px","unit":"8px","gutter":"24px","container-max":"1200px" },
+          fontFamily: { "poem-title":["Source Serif 4"],"ui-label-sm":["Hanken Grotesk"],"body-main":["Hanken Grotesk"],"ui-label-lg":["Hanken Grotesk"],"poem-body":["Source Serif 4"],"display-lg":["Source Serif 4"],"display-lg-mobile":["Source Serif 4"] },
+          fontSize: { "poem-title":["36px",{"lineHeight":"44px","fontWeight":"600"}],"ui-label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.1em","fontWeight":"500"}],"body-main":["16px",{"lineHeight":"24px","fontWeight":"400"}],"ui-label-lg":["16px",{"lineHeight":"24px","letterSpacing":"0.05em","fontWeight":"600"}],"poem-body":["20px",{"lineHeight":"32px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["32px",{"lineHeight":"40px","fontWeight":"700"}] }
+        } } };
     </script>
 </head>
-<body class="bg-background text-on-background font-body-main antialiased selection:bg-secondary selection:text-on-secondary-container">
+<body class="bg-background text-on-background font-body-main antialiased selection:bg-secondary selection:text-on-secondary">
 <div class="grain-overlay"></div>
+<svg width="0" height="0" class="absolute overflow-hidden" aria-hidden="true"><symbol id="emblem" viewBox="0 0 240 240">
+<circle cx="120" cy="120" r="118" fill="#0b2b26"/>
+<circle cx="120" cy="120" r="118" fill="none" stroke="#e9c349" stroke-opacity="0.5" stroke-width="4"/>
+<g fill="#e9c349">
+<path id="emblemStar" d="M120 40 l2.1 6.4 6.7 0 -5.4 4 2.1 6.4 -5.5-4 -5.5 4 2.1-6.4 -5.4-4 6.7 0z"/>
+<use href="#emblemStar" transform="rotate(-20 120 120)"/><use href="#emblemStar" transform="rotate(-40 120 120)"/><use href="#emblemStar" transform="rotate(-60 120 120)"/><use href="#emblemStar" transform="rotate(-80 120 120)"/><use href="#emblemStar" transform="rotate(20 120 120)"/><use href="#emblemStar" transform="rotate(40 120 120)"/><use href="#emblemStar" transform="rotate(60 120 120)"/><use href="#emblemStar" transform="rotate(80 120 120)"/>
+</g>
+<path fill="#accdc5" d="M46 121 C52 119,58 117,62 113 L60 96 L70 109 L80 95 L87 110 C92 112,96 115,99 119 C116 112,138 111,156 116 C159 110,162 103,161 96 C165 100,168 106,168 112 C174 114,180 118,184 124 C188 130,188 137,184 142 C182 145,178 145,176 142 L174 134 L172 145 L172 173 L164 173 L165 145 C160 147,154 148,148 147 L132 146 C128 146,124 146,120 145 L120 173 L112 173 L113 143 C108 141,104 138,101 134 L100 145 L100 173 L92 173 L93 143 C88 139,85 133,84 127 C78 127,72 126,67 123 C60 127,52 128,46 126 C44 125,44 122,46 121 Z"/>
+</symbol></svg>
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-background border-b border-secondary/20 h-16">
 <div class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
 <div class="flex items-center gap-4">
-<img alt="Nohchicho Emblem" class="h-8 w-8 object-contain cursor-pointer active:opacity-70" src="assets/logo.svg"/>
+<svg class="h-9 w-9" aria-label="Nohchicho emblem"><use href="#emblem"/></svg>
 <span class="font-display-lg-mobile text-display-lg-mobile tracking-tighter text-primary">NOHCHICHO</span>
 </div>
 <nav class="hidden md:flex gap-8 items-center">
 <a class="font-ui-label-lg text-ui-label-lg text-secondary after:content-['•'] after:block after:text-[8px] after:text-center transition-colors duration-300" href="index.html">Home</a>
 <a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="library.html">Library</a>
-<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Favorites</a>
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="search.html">Favorites</a>
 </nav>
 <div class="flex items-center">
 <a href="search.html"><span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70">search</span></a>
@@ -154,24 +58,24 @@
 <section class="relative min-h-[90vh] flex flex-col items-center justify-center bg-primary-container px-margin-mobile overflow-hidden">
 <div class="absolute inset-0 istang-pattern"></div>
 <div class="absolute inset-0 flex items-center justify-center opacity-10">
-<img alt="Nohchicho Wolf Emblem" class="w-[80vw] max-w-[600px] animate-float" src="assets/logo.svg"/>
+<svg class="w-[80vw] max-w-[600px] animate-float"><use href="#emblem"/></svg>
 </div>
 <div class="relative z-10 max-w-4xl text-center space-y-12 py-20">
 <div class="flex flex-col items-center gap-6">
-<img alt="Nohchicho Wolf Emblem" class="h-24 w-24 object-contain" src="assets/logo.svg"/>
+<svg class="h-24 w-24"><use href="#emblem"/></svg>
 <div class="h-px w-24 bg-secondary/30"></div>
 </div>
 <div class="space-y-8 italic">
 <p class="font-poem-body text-poem-body text-on-primary-container leading-relaxed md:text-3xl max-w-3xl mx-auto">
-                        "The rugged peaks of Caucasus, they rise,<br/>
-                        Where freedom’s wolf beneath the starlight lies.<br/>
-                        In every stone, a hero’s ancient song,<br/>
-                        In every heart, the will to suffer long."
+                        «Сегодня, через год, иль через век<br/>
+                        Я жизнь окончу на высокой ноте...<br/>
+                        Чеченец я, не просто человек —<br/>
+                        Я из титана сделан, не из плоти!»
                     </p>
-<cite class="block font-ui-label-lg text-ui-label-lg uppercase tracking-widest text-secondary">— Mikhail Lermontov, 1832</cite>
+<cite class="block font-ui-label-lg text-ui-label-lg uppercase tracking-widest text-secondary">— Умар Яричев, «Чеченец»</cite>
 </div>
 <div class="pt-8">
-<a href="library.html"><button class="bg-primary-container border border-secondary text-secondary font-ui-label-lg text-ui-label-lg px-12 py-4 uppercase tracking-widest hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-all duration-500">
+<a href="poem.html"><button class="bg-primary-container border border-secondary text-secondary font-ui-label-lg text-ui-label-lg px-12 py-4 uppercase tracking-widest hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-all duration-500">
                         Enter the Anthology
                     </button></a>
 </div>
@@ -184,54 +88,43 @@
 <span class="font-ui-label-sm text-ui-label-sm text-secondary uppercase tracking-widest">Heritage &amp; Lineage</span>
 <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary">Poets of the Mountains</h2>
 </div>
-<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-all flex items-center gap-2 group" href="library.html">
-                    Explore All Authors
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-all flex items-center gap-2 group" href="poem.html">
+                    Read the Anthology
                     <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
 </a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<!-- Large Card -->
-<a href="poem.html" class="md:col-span-8 group relative overflow-hidden bg-surface-container-low border border-secondary/10 p-10 flex flex-col justify-between min-h-[400px]">
+<!-- Large Card: Poem 1 -->
+<a href="poem.html?p=0" class="md:col-span-8 group relative overflow-hidden bg-surface-container-low border border-secondary/10 p-10 flex flex-col justify-between min-h-[400px]">
 <div class="space-y-4">
 <div class="flex gap-2">
-<span class="bg-secondary/10 text-secondary text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-tighter">Golden Era</span>
-<span class="bg-primary/10 text-primary text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-tighter">Iconic</span>
+<span class="bg-secondary/10 text-secondary text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-tighter">Modern Resistance</span>
+<span class="bg-primary/10 text-primary text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-tighter">Chechen War</span>
 </div>
-<h3 class="font-poem-title text-poem-title text-on-surface">Abuzar Aydamirov</h3>
-<p class="font-body-main text-on-surface-variant max-w-md">The patriarch of modern Chechen literature, whose epics redefined the nation's historical consciousness.</p>
+<h3 class="font-poem-title text-poem-title text-on-surface">Умар Яричев</h3>
+<p class="font-ui-label-lg text-ui-label-lg text-secondary">«Чеченец»</p>
+<p class="font-poem-body italic text-on-surface-variant max-w-md">Чеченец я, не просто человек — я из титана сделан, не из плоти.</p>
 </div>
-<div class="relative h-48 mt-8 overflow-hidden rounded-lg">
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent z-10"></div>
-<img class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="A dignified black and white portrait of a wise elderly Chechen writer with deep-set eyes, set against a backdrop of distant, misty mountain peaks. The lighting is dramatic and moody, emphasizing textures of skin and fabric. The style is that of a premium editorial magazine, using high contrast and a slight cinematic grain to evoke a sense of history and gravitas." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGHMIiU6XbbI10FpaAF5oW97uYWD3A-SMB9wFDlLV625Xx24zgBJbicsITwIqgr945-YpzWcDKg50-ogiex4Zf3Qxpn8w-U9xOLinQ-Hsy6DKFqNvZhGOG83EyfeDaVSAS7Aibp1e0Pc81q0Ko31H5iN23fYuObiYs_oC8Jo6XbvKZmDQ0w-ohfy1Eed_aEmhj4jNWbIK0-E0rFcTsFAutOxs0GgA6GgWHe1w2BqLujAPk6Qwr5Fn29AJASmIIEH8KWepxzPXtZ3qM"/>
+<div class="mt-8 flex items-center justify-between">
+<span class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container uppercase tracking-widest">Contemporary · Resistance Verse</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </div>
 </a>
 <!-- Column -->
 <div class="md:col-span-4 flex flex-col gap-gutter">
-<a href="poem.html" class="bg-surface-container border border-secondary/10 p-8 flex-1 group cursor-pointer hover:border-secondary/40 transition-colors">
-<span class="font-ui-label-sm text-ui-label-sm text-secondary mb-4 block">1950 - 2000</span>
-<h4 class="font-poem-title text-2xl text-on-surface mb-2">Magomed Mamakaev</h4>
-<p class="text-on-surface-variant text-sm">Pioneer of the novel-in-verse, capturing the spirit of the Chechen tower.</p>
+<a href="poem.html?p=1" class="bg-surface-container border border-secondary/10 p-8 flex-1 group cursor-pointer hover:border-secondary/40 transition-colors">
+<span class="font-ui-label-sm text-ui-label-sm text-secondary mb-4 block">Caucasus · Anthem</span>
+<h4 class="font-poem-title text-2xl text-on-surface mb-2">Хамзат Ханкаров</h4>
+<p class="text-on-surface-variant text-sm">«Гимн Кавказа» — a rallying anthem of Caucasian solidarity and freedom.</p>
 </a>
-<a href="poem.html" class="bg-surface-container border border-secondary/10 p-8 flex-1 group cursor-pointer hover:border-secondary/40 transition-colors">
-<span class="font-ui-label-sm text-ui-label-sm text-secondary mb-4 block">Contemporary</span>
-<h4 class="font-poem-title text-2xl text-on-surface mb-2">Raisa Akhmatova</h4>
-<p class="text-on-surface-variant text-sm">The voice of female resilience, exploring the intimacy of home and exile.</p>
+<a href="library.html" class="bg-surface-container border border-secondary/10 p-8 flex-1 group cursor-pointer hover:border-secondary/40 transition-colors">
+<span class="font-ui-label-sm text-ui-label-sm text-secondary mb-4 block">The Library</span>
+<h4 class="font-poem-title text-2xl text-on-surface mb-2">Browse the Archive</h4>
+<p class="text-on-surface-variant text-sm">Explore the full anthology of Chechen verse and heritage.</p>
 </a>
 </div>
 </div>
 </section>
-<!-- Decorative Pattern Break -->
-<div class="w-full flex justify-center py-12">
-<div class="flex items-center gap-8 opacity-20">
-<div class="h-px w-32 bg-secondary"></div>
-<div class="grid grid-cols-3 gap-2">
-<div class="w-2 h-2 rotate-45 border border-secondary"></div>
-<div class="w-2 h-2 rotate-45 bg-secondary"></div>
-<div class="w-2 h-2 rotate-45 border border-secondary"></div>
-</div>
-<div class="h-px w-32 bg-secondary"></div>
-</div>
-</div>
 <!-- Global Voices (Horizontal Slider Style) -->
 <section class="py-24 bg-surface-container-lowest">
 <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
@@ -239,37 +132,28 @@
 <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary">Global Voices</h2>
 </div>
 <div class="flex overflow-x-auto gap-8 px-margin-mobile md:px-margin-desktop pb-12 scrollbar-hide">
-<!-- Card 1 -->
 <div class="min-w-[300px] md:min-w-[450px] bg-background border border-secondary/5 p-12 space-y-8 flex flex-col justify-between">
 <span class="material-symbols-outlined text-4xl text-secondary/30">format_quote</span>
-<p class="font-poem-body text-xl italic text-on-surface-variant leading-relaxed">
-                        "I have seen the mountains of the Caucasus... where the clouds sleep on the summits, and the eagles scream in the abyss."
-                    </p>
+<p class="font-poem-body text-xl italic text-on-surface-variant leading-relaxed">"I have seen the mountains of the Caucasus... where the clouds sleep on the summits, and the eagles scream in the abyss."</p>
 <div class="space-y-1">
 <h5 class="font-ui-label-lg text-on-surface">Alexander Pushkin</h5>
 <p class="text-xs uppercase tracking-widest text-on-tertiary-container">The Prisoner of the Caucasus, 1821</p>
 </div>
 </div>
-<!-- Card 2 -->
 <div class="min-w-[300px] md:min-w-[450px] bg-background border border-secondary/5 p-12 space-y-8 flex flex-col justify-between">
 <span class="material-symbols-outlined text-4xl text-secondary/30">format_quote</span>
-<p class="font-poem-body text-xl italic text-on-surface-variant leading-relaxed">
-                        "The nature here is wild and magnificent. It demands a different kind of song, one as sharp as the flint of the hills."
-                    </p>
+<p class="font-poem-body text-xl italic text-on-surface-variant leading-relaxed">"The nature here is wild and magnificent. It demands a different kind of song, one as sharp as the flint of the hills."</p>
 <div class="space-y-1">
 <h5 class="font-ui-label-lg text-on-surface">Lev Tolstoy</h5>
 <p class="text-xs uppercase tracking-widest text-on-tertiary-container">Hadji Murat, 1904</p>
 </div>
 </div>
-<!-- Card 3 -->
 <div class="min-w-[300px] md:min-w-[450px] bg-background border border-secondary/5 p-12 space-y-8 flex flex-col justify-between">
 <span class="material-symbols-outlined text-4xl text-secondary/30">format_quote</span>
-<p class="font-poem-body text-xl italic text-on-surface-variant leading-relaxed">
-                        "To the stone towers of Chechnya, where the wind whispers secrets of a thousand years."
-                    </p>
+<p class="font-poem-body text-xl italic text-on-surface-variant leading-relaxed">"The rugged peaks of Caucasus, they rise, where freedom's wolf beneath the starlight lies."</p>
 <div class="space-y-1">
-<h5 class="font-ui-label-lg text-on-surface">Modern Verse</h5>
-<p class="text-xs uppercase tracking-widest text-on-tertiary-container">Contemporary Anthology, 2022</p>
+<h5 class="font-ui-label-lg text-on-surface">Mikhail Lermontov</h5>
+<p class="text-xs uppercase tracking-widest text-on-tertiary-container">1832</p>
 </div>
 </div>
 </div>
@@ -279,7 +163,9 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
 <div class="relative aspect-square">
 <div class="absolute inset-0 border-2 border-secondary/10 translate-x-4 translate-y-4"></div>
-<div class="w-full h-full bg-cover bg-center grayscale-50 brightness-75 border border-secondary/20 relative z-10" data-alt="A hauntingly beautiful architectural photograph of an ancient Chechen stone watchtower standing solitary on a steep green ridge under a stormy, purple-tinted sky. The lighting is cinematic, with a single beam of sun breaking through the clouds to hit the side of the tower. The mood is one of stoic resilience and timelessness, captured with a deep depth of field and high-end photographic detail." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGgNUry3zV5hFfOC88R-N-InvYJmhAtQrad4rCLiAgwZbbWNYFt2XejqVnYHGPNiO7OTcVRRM0LE9I329oWkA8PDk4RTBxTnIgcLok5b35sFomLYlsi9mikgAtWjOpojwWdHwLroqW6x5Y6zz6TowewVP9LDGoI7QILW0DFmi0383ToITnF1eVxakFtglxz6A7nXdocUVX83WmtM3x25qKmNgz3VOI-FvA2a-xKP8ZEh0QNVldDoyGAtO23rfGIfHVTpihMn2o6fca')"></div>
+<div class="w-full h-full border border-secondary/20 relative z-10 bg-primary-container flex items-center justify-center">
+<svg class="w-40 h-40 opacity-80"><use href="#emblem"/></svg>
+</div>
 </div>
 <div class="space-y-10">
 <div class="space-y-4">
@@ -310,9 +196,7 @@
 </div>
 </li>
 </ul>
-<a href="library.html"><button class="font-ui-label-lg text-ui-label-lg text-secondary border-b border-secondary/30 pb-2 hover:border-secondary transition-all">
-                        Access the Full Archive
-                    </button></a>
+<a href="poem.html"><button class="font-ui-label-lg text-ui-label-lg text-secondary border-b border-secondary/30 pb-2 hover:border-secondary transition-all">Access the Full Archive</button></a>
 </div>
 </div>
 </section>
@@ -320,7 +204,7 @@
 <!-- Footer -->
 <footer class="w-full py-12 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-t border-secondary/10">
 <div class="flex flex-col items-center gap-unit text-center max-w-container-max mx-auto">
-<img alt="Nohchicho Wolf Emblem" class="h-16 w-16 opacity-30 mb-4" src="assets/logo.svg"/>
+<svg class="h-16 w-16 opacity-40 mb-4"><use href="#emblem"/></svg>
 <h4 class="font-display-lg-mobile text-secondary opacity-50 mb-6">NOHCHICHO ANTHOLOGY</h4>
 <div class="flex flex-wrap justify-center gap-8 mb-8">
 <a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="#">History</a>
@@ -347,14 +231,10 @@
 </a>
 </nav>
 <script>
-        // Simple scroll effect for TopAppBar
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('bg-opacity-95', 'backdrop-blur-md');
-            } else {
-                header.classList.remove('bg-opacity-95', 'backdrop-blur-md');
-            }
+            if (window.scrollY > 50) { header.classList.add('bg-opacity-95', 'backdrop-blur-md'); }
+            else { header.classList.remove('bg-opacity-95', 'backdrop-blur-md'); }
         });
     </script>
 </body></html>

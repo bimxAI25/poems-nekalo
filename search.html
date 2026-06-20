@@ -4,355 +4,141 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Nohchicho | Discovery</title>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/>
-<link rel="apple-touch-icon" href="assets/favicon-180.png"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20240%20240%22%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%22120%22%20fill%3D%22%230b2b26%22%2F%3E%3Cg%20fill%3D%22%23e9c349%22%3E%3Cpath%20d%3D%22M120%2034%20l2.4%207.2%207.6%200%20-6.1%204.5%202.3%207.2%20-6.2-4.5%20-6.2%204.5%202.3-7.2%20-6.1-4.5%207.6%200z%22%2F%3E%3Cpath%20d%3D%22M74%2046%20l1.9%205.8%206.1%200%20-4.9%203.6%201.9%205.8%20-5-3.6%20-5%203.6%201.9-5.8%20-4.9-3.6%206.1%200z%22%2F%3E%3Cpath%20d%3D%22M166%2046%20l1.9%205.8%206.1%200%20-4.9%203.6%201.9%205.8%20-5-3.6%20-5%203.6%201.9-5.8%20-4.9-3.6%206.1%200z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23e9c349%22%20transform%3D%22translate%28120%2C138%29%20scale%281.5%29%20translate%28-120%2C-138%29%22%3E%3Cpath%20d%3D%22M46%20121%20C52%20119%2C58%20117%2C62%20113%20L60%2096%20L70%20109%20L80%2095%20L87%20110%20C92%20112%2C96%20115%2C99%20119%20C116%20112%2C138%20111%2C156%20116%20C159%20110%2C162%20103%2C161%2096%20C165%20100%2C168%20106%2C168%20112%20C174%20114%2C180%20118%2C184%20124%20C188%20130%2C188%20137%2C184%20142%20C182%20145%2C178%20145%2C176%20142%20L174%20134%20L172%20145%20L172%20173%20L164%20173%20L165%20145%20C160%20147%2C154%20148%2C148%20147%20L132%20146%20C128%20146%2C124%20146%2C120%20145%20L120%20173%20L112%20173%20L113%20143%20C108%20141%2C104%20138%2C101%20134%20L100%20145%20L100%20173%20L92%20173%20L93%20143%20C88%20139%2C85%20133%2C84%20127%20C78%20127%2C72%20126%2C67%20123%20C60%20127%2C52%20128%2C46%20126%20C44%20125%2C44%20122%2C46%20121%20Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .grain-overlay {
-            pointer-events: none;
-            position: fixed;
-            inset: 0;
-            z-index: 99;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        .star-background {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120vh;
-            height: 120vh;
-            z-index: -1;
-            opacity: 0.05;
-            pointer-events: none;
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #e9c34933;
-            border-radius: 10px;
-        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .grain-overlay { pointer-events: none; position: fixed; inset: 0; z-index: 99; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+        .star-background { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120vh; height: 120vh; z-index: -1; opacity: 0.05; pointer-events: none; }
     </style>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-secondary-container": "#342800",
-                      "secondary": "#e9c349",
-                      "inverse-primary": "#46645e",
-                      "outline-variant": "#414846",
-                      "on-primary": "#173630",
-                      "on-secondary-fixed-variant": "#574500",
-                      "on-error-container": "#ffdad6",
-                      "on-secondary-fixed": "#241a00",
-                      "tertiary": "#c8c6c5",
-                      "on-primary-container": "#74948d",
-                      "surface-container": "#1e201d",
-                      "on-tertiary": "#313030",
-                      "surface-dim": "#121411",
-                      "error-container": "#93000a",
-                      "inverse-on-surface": "#2f312e",
-                      "tertiary-container": "#262626",
-                      "surface-container-high": "#292a27",
-                      "on-secondary": "#3c2f00",
-                      "surface": "#121411",
-                      "primary": "#accdc5",
-                      "surface-tint": "#accdc5",
-                      "inverse-surface": "#e3e3de",
-                      "surface-container-highest": "#333532",
-                      "secondary-container": "#af8d11",
-                      "surface-container-low": "#1a1c19",
-                      "on-primary-fixed-variant": "#2e4c46",
-                      "tertiary-fixed": "#e5e2e1",
-                      "on-surface": "#e3e3de",
-                      "primary-fixed-dim": "#accdc5",
-                      "background": "#121411",
-                      "on-surface-variant": "#c1c8c5",
-                      "primary-container": "#0b2b26",
-                      "on-tertiary-fixed": "#1c1b1b",
-                      "on-error": "#690005",
-                      "on-tertiary-container": "#8e8d8c",
-                      "secondary-fixed": "#ffe088",
-                      "on-primary-fixed": "#00201c",
-                      "tertiary-fixed-dim": "#c8c6c5",
-                      "primary-fixed": "#c8eae1",
-                      "outline": "#8b9290",
-                      "on-tertiary-fixed-variant": "#474746",
-                      "surface-variant": "#333532",
-                      "secondary-fixed-dim": "#e9c349",
-                      "surface-bright": "#383a36",
-                      "error": "#ffb4ab",
-                      "surface-container-lowest": "#0d0f0c",
-                      "on-background": "#e3e3de"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "margin-mobile": "16px",
-                      "margin-desktop": "64px",
-                      "unit": "8px",
-                      "gutter": "24px",
-                      "container-max": "1200px"
-              },
-              "fontFamily": {
-                      "poem-title": ["Source Serif 4"],
-                      "ui-label-sm": ["Hanken Grotesk"],
-                      "body-main": ["Hanken Grotesk"],
-                      "ui-label-lg": ["Hanken Grotesk"],
-                      "poem-body": ["Source Serif 4"],
-                      "display-lg": ["Source Serif 4"],
-                      "display-lg-mobile": ["Source Serif 4"]
-              },
-              "fontSize": {
-                      "poem-title": ["36px", {"lineHeight": "44px", "fontWeight": "600"}],
-                      "ui-label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
-                      "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "ui-label-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "poem-body": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
-                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
-              }
-            },
-          },
-        }
+        tailwind.config = { darkMode: "class", theme: { extend: {
+          colors: { "secondary":"#e9c349","on-secondary":"#3c2f00","surface-container":"#1e201d","surface-container-high":"#292a27","surface":"#121411","primary":"#accdc5","secondary-container":"#af8d11","surface-container-low":"#1a1c19","on-surface":"#e3e3de","background":"#121411","on-surface-variant":"#c1c8c5","primary-container":"#0b2b26","on-tertiary-container":"#8e8d8c","outline":"#8b9290","surface-variant":"#333532","surface-container-lowest":"#0d0f0c","on-background":"#e3e3de" },
+          borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px" },
+          spacing: { "margin-mobile":"16px","margin-desktop":"64px","unit":"8px","gutter":"24px","container-max":"1200px" },
+          fontFamily: { "poem-title":["Source Serif 4"],"ui-label-sm":["Hanken Grotesk"],"body-main":["Hanken Grotesk"],"ui-label-lg":["Hanken Grotesk"],"poem-body":["Source Serif 4"],"display-lg":["Source Serif 4"],"display-lg-mobile":["Source Serif 4"] },
+          fontSize: { "poem-title":["36px",{"lineHeight":"44px","fontWeight":"600"}],"ui-label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.1em","fontWeight":"500"}],"body-main":["16px",{"lineHeight":"24px","fontWeight":"400"}],"ui-label-lg":["16px",{"lineHeight":"24px","letterSpacing":"0.05em","fontWeight":"600"}],"poem-body":["20px",{"lineHeight":"32px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["32px",{"lineHeight":"40px","fontWeight":"700"}] }
+        } } };
     </script>
 </head>
-<body class="bg-background text-on-background font-body-main selection:bg-secondary/30 selection:text-secondary overflow-x-hidden custom-scrollbar">
+<body class="bg-background text-on-background font-body-main selection:bg-secondary/30 selection:text-secondary overflow-x-hidden">
 <div class="grain-overlay"></div>
-<!-- Background Decoration: Nine Stars -->
-<div class="star-background flex items-center justify-center">
-<svg class="w-full h-full stroke-secondary fill-none opacity-20" style="stroke-width: 0.15;" viewbox="0 0 100 100">
-<circle cx="50" cy="50" r="45" stroke-dasharray="1 4"></circle>
-<g id="stars">
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14"></polygon>
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14" transform="rotate(40 50 50)"></polygon>
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14" transform="rotate(80 50 50)"></polygon>
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14" transform="rotate(120 50 50)"></polygon>
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14" transform="rotate(160 50 50)"></polygon>
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14" transform="rotate(200 50 50)"></polygon>
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14" transform="rotate(240 50 50)"></polygon>
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14" transform="rotate(280 50 50)"></polygon>
-<polygon points="50,10 52,14 57,14 53,17 55,22 50,19 45,22 47,17 43,14 48,14" transform="rotate(320 50 50)"></polygon>
+<svg width="0" height="0" class="absolute overflow-hidden" aria-hidden="true"><symbol id="emblem" viewBox="0 0 240 240">
+<circle cx="120" cy="120" r="118" fill="#0b2b26"/>
+<circle cx="120" cy="120" r="118" fill="none" stroke="#e9c349" stroke-opacity="0.5" stroke-width="4"/>
+<g fill="#e9c349">
+<path id="emblemStar" d="M120 40 l2.1 6.4 6.7 0 -5.4 4 2.1 6.4 -5.5-4 -5.5 4 2.1-6.4 -5.4-4 6.7 0z"/>
+<use href="#emblemStar" transform="rotate(-20 120 120)"/><use href="#emblemStar" transform="rotate(-40 120 120)"/><use href="#emblemStar" transform="rotate(-60 120 120)"/><use href="#emblemStar" transform="rotate(-80 120 120)"/><use href="#emblemStar" transform="rotate(20 120 120)"/><use href="#emblemStar" transform="rotate(40 120 120)"/><use href="#emblemStar" transform="rotate(60 120 120)"/><use href="#emblemStar" transform="rotate(80 120 120)"/>
 </g>
-</svg>
-</div>
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-background dark:bg-background border-b border-secondary/20 h-16">
+<path fill="#accdc5" d="M46 121 C52 119,58 117,62 113 L60 96 L70 109 L80 95 L87 110 C92 112,96 115,99 119 C116 112,138 111,156 116 C159 110,162 103,161 96 C165 100,168 106,168 112 C174 114,180 118,184 124 C188 130,188 137,184 142 C182 145,178 145,176 142 L174 134 L172 145 L172 173 L164 173 L165 145 C160 147,154 148,148 147 L132 146 C128 146,124 146,120 145 L120 173 L112 173 L113 143 C108 141,104 138,101 134 L100 145 L100 173 L92 173 L93 143 C88 139,85 133,84 127 C78 127,72 126,67 123 C60 127,52 128,46 126 C44 125,44 122,46 121 Z"/>
+</symbol></svg>
+<header class="fixed top-0 w-full z-50 bg-background border-b border-secondary/20 h-16">
 <div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
 <div class="flex items-center gap-4">
-<a href="index.html" class="w-10 h-10 rounded-lg overflow-hidden border border-secondary/30 flex items-center justify-center bg-primary-container">
-<img alt="Nohchicho Emblem" class="w-full h-full object-cover" src="assets/logo.svg"/>
-</a>
-<a href="index.html"><h1 class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary dark:text-primary cursor-pointer active:opacity-70">NOHCHICHO</h1></a>
+<a href="index.html" class="w-10 h-10"><svg class="w-10 h-10" aria-label="Nohchicho emblem"><use href="#emblem"/></svg></a>
+<a href="index.html"><h1 class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary">NOHCHICHO</h1></a>
 </div>
 <nav class="hidden md:flex items-center gap-gutter">
 <a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="index.html">Home</a>
-<a class="font-ui-label-lg text-ui-label-lg text-secondary after:content-['•'] after:block after:text-[8px] after:text-center transition-colors duration-300" href="search.html">Explore</a>
+<a class="font-ui-label-lg text-ui-label-lg text-secondary after:content-['•'] after:block after:text-[8px] after:text-center" href="search.html">Explore</a>
 <a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300" href="library.html">Library</a>
 </nav>
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70 p-2 hover:bg-surface-container rounded-full transition-all">search</span>
-<a href="library.html"><span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70 p-2 hover:bg-surface-container rounded-full transition-all">menu_book</span></a>
+<span class="material-symbols-outlined text-primary cursor-pointer p-2 hover:bg-surface-container rounded-full transition-all">search</span>
+<a href="library.html"><span class="material-symbols-outlined text-primary cursor-pointer p-2 hover:bg-surface-container rounded-full transition-all">menu_book</span></a>
 </div>
 </div>
 </header>
-<!-- Main Content -->
 <main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto min-h-screen">
-<!-- Search & Filters Section -->
+<!-- Search & Filters -->
 <section class="mb-16">
 <div class="max-w-3xl mx-auto space-y-unit">
 <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-center mb-10 text-secondary">Seek the Ancient Verse</h2>
-<!-- Search Bar Container -->
-<div class="relative group">
-<div class="absolute inset-0 bg-secondary/10 blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-500"></div>
+<form action="poem.html" class="relative group">
 <div class="relative flex items-center bg-surface-container border border-secondary/20 rounded-lg p-1 group-focus-within:border-secondary transition-all">
 <span class="material-symbols-outlined ml-4 text-on-surface-variant">search</span>
 <input class="w-full bg-transparent border-none focus:ring-0 px-4 py-4 text-body-main text-on-surface placeholder:text-on-surface-variant/50 font-medium" placeholder="Search by verse, title, or poet..." type="text"/>
-<button class="bg-secondary text-on-secondary px-6 py-3 rounded-lg font-ui-label-lg text-ui-label-lg uppercase tracking-wider hover:shadow-[0_0_15px_rgba(233,195,73,0.3)] transition-all active:scale-95 flex items-center gap-2">
-<span class="">Search</span>
-</button>
+<button class="bg-secondary text-on-secondary px-6 py-3 rounded-lg font-ui-label-lg text-ui-label-lg uppercase tracking-wider hover:shadow-[0_0_15px_rgba(233,195,73,0.3)] transition-all active:scale-95" type="submit">Search</button>
 </div>
-</div>
-<!-- Filters -->
+</form>
 <div class="flex flex-wrap justify-center gap-gutter pt-6">
-<div class="group cursor-pointer">
-<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg group-hover:border-secondary transition-colors">
-<span class="font-ui-label-sm text-ui-label-sm uppercase text-on-surface-variant group-hover:text-secondary">Author</span>
-<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-secondary">expand_more</span>
-</div>
-</div>
-<div class="group cursor-pointer">
-<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg group-hover:border-secondary transition-colors">
-<span class="font-ui-label-sm text-ui-label-sm uppercase text-on-surface-variant group-hover:text-secondary">Theme</span>
-<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-secondary">filter_list</span>
-</div>
-</div>
-<div class="group cursor-pointer">
-<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg group-hover:border-secondary transition-colors">
-<span class="font-ui-label-sm text-ui-label-sm uppercase text-on-surface-variant group-hover:text-secondary">Era</span>
-<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-secondary">history_edu</span>
-</div>
-</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg hover:border-secondary transition-colors cursor-pointer"><span class="font-ui-label-sm text-ui-label-sm uppercase text-on-surface-variant">Author</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span></div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg hover:border-secondary transition-colors cursor-pointer"><span class="font-ui-label-sm text-ui-label-sm uppercase text-on-surface-variant">Theme</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">filter_list</span></div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg hover:border-secondary transition-colors cursor-pointer"><span class="font-ui-label-sm text-ui-label-sm uppercase text-on-surface-variant">Era</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">history_edu</span></div>
 </div>
 </div>
 </section>
-<!-- Asymmetric Discovery Grid -->
+<!-- Discovery Grid -->
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
-<!-- Trending Now List (Left Column) -->
 <section class="md:col-span-8 space-y-gutter">
 <div class="flex items-center justify-between mb-2">
-<h3 class="font-ui-label-lg text-ui-label-lg uppercase text-secondary tracking-widest flex items-center gap-3">
-<span class="w-8 h-[1px] bg-secondary"></span>
-                        Trending Now
-                    </h3>
-<a class="font-ui-label-sm text-ui-label-sm text-on-surface-variant hover:text-secondary transition-all underline underline-offset-4" href="library.html">View All Archives</a>
+<h3 class="font-ui-label-lg text-ui-label-lg uppercase text-secondary tracking-widest flex items-center gap-3"><span class="w-8 h-[1px] bg-secondary"></span>The Anthology</h3>
+<a class="font-ui-label-sm text-ui-label-sm text-on-surface-variant hover:text-secondary transition-all underline underline-offset-4" href="library.html">View Library</a>
 </div>
 <div class="space-y-4">
-<!-- Poem Card 1 -->
 <a href="poem.html?p=0" class="group relative bg-surface-container-low border border-secondary/10 p-6 rounded-lg hover:border-secondary/40 transition-all cursor-pointer flex gap-6 items-center">
 <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center font-display-lg text-secondary/30 group-hover:text-secondary transition-colors">01</div>
 <div class="flex-grow">
-<div class="flex gap-2 mb-2">
-<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Modern Resistance</span>
-<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Chechen War</span>
-</div>
+<div class="flex gap-2 mb-2"><span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Modern Resistance</span><span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Chechen War</span></div>
 <h4 class="font-poem-title text-2xl text-on-surface group-hover:text-secondary transition-colors">Чеченец</h4>
 <p class="text-on-surface-variant/70 italic text-sm mt-1">Умар Яричев</p>
 </div>
-<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">arrow_forward_ios</span>
+<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
 </a>
-<!-- Poem Card 2 -->
 <a href="poem.html?p=1" class="group relative bg-surface-container-low border border-secondary/10 p-6 rounded-lg hover:border-secondary/40 transition-all cursor-pointer flex gap-6 items-center">
 <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center font-display-lg text-secondary/30 group-hover:text-secondary transition-colors">02</div>
 <div class="flex-grow">
-<div class="flex gap-2 mb-2">
-<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Caucasus</span>
-<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Anthem</span>
-</div>
+<div class="flex gap-2 mb-2"><span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Caucasus</span><span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Anthem</span></div>
 <h4 class="font-poem-title text-2xl text-on-surface group-hover:text-secondary transition-colors">Гимн Кавказа</h4>
 <p class="text-on-surface-variant/70 italic text-sm mt-1">Хамзат Ханкаров</p>
 </div>
-<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">arrow_forward_ios</span>
-</a>
-<!-- Poem Card 3 -->
-<a href="poem.html" class="group relative bg-surface-container-low border border-secondary/10 p-6 rounded-lg hover:border-secondary/40 transition-all cursor-pointer flex gap-6 items-center">
-<div class="flex-shrink-0 w-12 h-12 flex items-center justify-center font-display-lg text-secondary/30 group-hover:text-secondary transition-colors">03</div>
-<div class="flex-grow">
-<div class="flex gap-2 mb-2">
-<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">Exile</span>
-<span class="bg-surface-variant px-2 py-0.5 rounded text-[10px] uppercase font-bold text-on-surface-variant">1944</span>
-</div>
-<h4 class="font-poem-title text-2xl text-on-surface group-hover:text-secondary transition-colors">Echoes of the High Towers</h4>
-<p class="text-on-surface-variant/70 italic text-sm mt-1">Abuzar Aydamirov</p>
-</div>
-<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">arrow_forward_ios</span>
+<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
 </a>
 </div>
 </section>
-<!-- Surprise Me & Meta (Right Column) -->
 <aside class="md:col-span-4 space-y-gutter mt-12 md:mt-0">
-<!-- Shuffle Card -->
 <div class="bg-primary-container border border-secondary/20 p-8 rounded-lg text-center space-y-6 relative overflow-hidden group">
 <div class="absolute -top-12 -right-12 w-32 h-32 bg-secondary/10 blur-3xl rounded-full"></div>
 <div class="relative z-10">
 <span class="material-symbols-outlined text-5xl text-secondary mb-4 block group-hover:rotate-180 transition-transform duration-700" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
 <h3 class="font-display-lg text-display-lg-mobile text-primary">Unseen Heritage</h3>
-<p class="text-on-primary-container/80 text-sm py-4">Let destiny choose your next reading. Discover a poem from our deepest archives.</p>
-<button class="w-full bg-secondary text-on-secondary py-4 rounded-lg font-ui-label-lg text-ui-label-lg uppercase tracking-widest hover:bg-secondary/90 transition-all flex items-center justify-center gap-3 active:scale-95 shadow-[0_4px_20px_rgba(0,0,0,0.4)]" id="shuffle-btn">
-<span class="material-symbols-outlined">shuffle</span>
-                            Surprise Me
-                        </button>
+<p class="text-on-primary-container/80 text-sm py-4">Let destiny choose your next reading. Open the anthology and slide through the verses.</p>
+<a href="poem.html"><button class="w-full bg-secondary text-on-secondary py-4 rounded-lg font-ui-label-lg text-ui-label-lg uppercase tracking-widest hover:bg-secondary/90 transition-all flex items-center justify-center gap-3 active:scale-95 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"><span class="material-symbols-outlined">shuffle</span>Surprise Me</button></a>
 </div>
 </div>
-<!-- Collection Spotlight -->
 <div class="bg-surface-container border border-outline/10 p-6 rounded-lg">
 <h4 class="font-ui-label-lg text-ui-label-lg text-on-surface-variant mb-4 uppercase tracking-tighter">Era Spotlight</h4>
-<div class="relative h-48 rounded-lg overflow-hidden mb-4">
-<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, low-angle shot of ancient stone watchtowers in the Caucasus mountains at dusk. The sky is a deep indigo, and the stone walls have a weathered, golden texture from the fading sunlight. Atmosphere is scholarly, respectful, and slightly melancholic, reflecting a theme of historical preservation. Deep greens and earthy tones dominate." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcHT1ZeigZAGNvj8w_MoqpYjpKCgk6704peRCvHosTt1cgso2y130h_BOCiDWQIyQcKQSVKjW17X_wXQqfzPuZE2f5FNX4KBL-k9QMr1lPO2hp2DjoKWLSuTGzcBnqg6ysUy12ufkjSAzgPdaEueYuz2ZtuImk4WmDvUaoz33GYEoJ7VB_wvGhoGwM5YLDu5Qke0XJYAqdGnWlf6SvEeX1xhyXAoTOXooeTzM2iKhXhZ1XqRMpipI7ayhI-SomYnnvWwfXGiwAKRJ6')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-<div class="absolute bottom-4 left-4">
-<span class="font-poem-title text-xl text-on-background">Golden Age of Sufi Verse</span>
+<div class="relative h-48 rounded-lg overflow-hidden mb-4 bg-primary-container flex items-center justify-center">
+<svg class="w-24 h-24 opacity-70"><use href="#emblem"/></svg>
+<div class="absolute bottom-4 left-4"><span class="font-poem-title text-xl text-on-background">Modern Resistance</span></div>
 </div>
-</div>
-<p class="text-xs text-on-surface-variant leading-relaxed">Explore the metaphysical foundations of Vainakh culture through the 17th-century mystic traditions.</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">Contemporary Chechen verse — the defiant voice of identity, exile, and the longing for home.</p>
 </div>
 </aside>
 </div>
-<!-- Decorative Pattern -->
 <div class="py-24 flex justify-center opacity-30">
-<svg class="stroke-secondary fill-none" height="20" viewbox="0 0 400 20" width="400">
-<path d="M0,10 Q25,0 50,10 T100,10 T150,10 T200,10 T250,10 T300,10 T350,10 T400,10" stroke-width="0.5"></path>
-</svg>
+<svg class="stroke-secondary fill-none" height="20" viewBox="0 0 400 20" width="400"><path d="M0,10 Q25,0 50,10 T100,10 T150,10 T200,10 T250,10 T300,10 T350,10 T400,10" stroke-width="0.5"></path></svg>
 </div>
 </main>
 <!-- Footer -->
-<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-secondary/10">
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-t border-secondary/10">
 <div class="flex flex-col items-center gap-unit text-center max-w-container-max mx-auto">
-<div class="w-16 h-16 rounded-lg overflow-hidden border border-secondary/30 flex items-center justify-center bg-primary-container mb-4 mx-auto"><img alt="Nohchicho Emblem" class="w-full h-full object-cover" src="assets/logo.svg"/></div><h2 class="font-display-lg text-display-lg-mobile text-secondary opacity-50 mb-4">NOHCHICHO</h2>
+<svg class="w-16 h-16 mb-4"><use href="#emblem"/></svg>
+<h2 class="font-display-lg text-display-lg-mobile text-secondary opacity-50 mb-4">NOHCHICHO</h2>
 <div class="flex flex-wrap justify-center gap-gutter mb-8">
 <a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="#">History</a>
 <a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="#">Tradition</a>
-<a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all text-secondary font-bold" href="library.html">Authors</a>
-<a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="library.html">Archives</a>
+<a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="library.html">Authors</a>
+<a class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="poem.html">Archives</a>
 </div>
 <p class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container max-w-lg">© 2024 Nohchicho Anthology. Dedicated to the resilience of the Chechen spirit.</p>
 </div>
 </footer>
-<!-- Mobile Bottom Navigation -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe bg-surface-container dark:bg-surface-container z-50 border-t border-secondary/10">
-<a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-95 duration-200">
-<span class="material-symbols-outlined">home</span>
-<span class="font-ui-label-sm text-ui-label-sm">Home</span>
-</a>
-<a href="library.html" class="flex flex-col items-center justify-center text-secondary font-bold hover:text-primary transition-all active:scale-95 duration-200">
-<span class="material-symbols-outlined">local_library</span>
-<span class="font-ui-label-sm text-ui-label-sm">Library</span>
-</a>
-<a href="search.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-95 duration-200">
-<span class="material-symbols-outlined">auto_awesome</span>
-<span class="font-ui-label-sm text-ui-label-sm">Favorites</span>
-</a>
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe bg-surface-container z-50 border-t border-secondary/10">
+<a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all"><span class="material-symbols-outlined">home</span><span class="font-ui-label-sm text-ui-label-sm">Home</span></a>
+<a href="library.html" class="flex flex-col items-center justify-center text-secondary font-bold transition-all"><span class="material-symbols-outlined">local_library</span><span class="font-ui-label-sm text-ui-label-sm">Library</span></a>
+<a href="poem.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all"><span class="material-symbols-outlined">auto_awesome</span><span class="font-ui-label-sm text-ui-label-sm">Favorites</span></a>
 </nav>
-<script>
-        // Micro-interaction for shuffle button
-        const shuffleBtn = document.getElementById('shuffle-btn');
-        if(shuffleBtn) {
-            shuffleBtn.addEventListener('click', () => {
-                const icon = shuffleBtn.querySelector('.material-symbols-outlined');
-                icon.style.transform = 'rotate(360deg)';
-                shuffleBtn.classList.add('opacity-50');
-                setTimeout(() => {
-                    icon.style.transform = 'rotate(0deg)';
-                    shuffleBtn.classList.remove('opacity-50');
-                    window.location.href = 'poem.html';
-                }, 800);
-            });
-        }
-        // Header scroll behavior
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 20) {
-                header.classList.add('bg-opacity-95', 'backdrop-blur-md');
-            } else {
-                header.classList.remove('bg-opacity-95', 'backdrop-blur-md');
-            }
-        });
-    </script>
-</body><
+</body></html>

@@ -4,140 +4,51 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ICHKERIA - Anthology Library</title>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/>
-<link rel="apple-touch-icon" href="assets/favicon-180.png"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20240%20240%22%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22120%22%20r%3D%22120%22%20fill%3D%22%230b2b26%22%2F%3E%3Cg%20fill%3D%22%23e9c349%22%3E%3Cpath%20d%3D%22M120%2034%20l2.4%207.2%207.6%200%20-6.1%204.5%202.3%207.2%20-6.2-4.5%20-6.2%204.5%202.3-7.2%20-6.1-4.5%207.6%200z%22%2F%3E%3Cpath%20d%3D%22M74%2046%20l1.9%205.8%206.1%200%20-4.9%203.6%201.9%205.8%20-5-3.6%20-5%203.6%201.9-5.8%20-4.9-3.6%206.1%200z%22%2F%3E%3Cpath%20d%3D%22M166%2046%20l1.9%205.8%206.1%200%20-4.9%203.6%201.9%205.8%20-5-3.6%20-5%203.6%201.9-5.8%20-4.9-3.6%206.1%200z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23e9c349%22%20transform%3D%22translate%28120%2C138%29%20scale%281.5%29%20translate%28-120%2C-138%29%22%3E%3Cpath%20d%3D%22M46%20121%20C52%20119%2C58%20117%2C62%20113%20L60%2096%20L70%20109%20L80%2095%20L87%20110%20C92%20112%2C96%20115%2C99%20119%20C116%20112%2C138%20111%2C156%20116%20C159%20110%2C162%20103%2C161%2096%20C165%20100%2C168%20106%2C168%20112%20C174%20114%2C180%20118%2C184%20124%20C188%20130%2C188%20137%2C184%20142%20C182%20145%2C178%20145%2C176%20142%20L174%20134%20L172%20145%20L172%20173%20L164%20173%20L165%20145%20C160%20147%2C154%20148%2C148%20147%20L132%20146%20C128%20146%2C124%20146%2C120%20145%20L120%20173%20L112%20173%20L113%20143%20C108%20141%2C104%20138%2C101%20134%20L100%20145%20L100%20173%20L92%20173%20L93%20143%20C88%20139%2C85%20133%2C84%20127%20C78%20127%2C72%20126%2C67%20123%20C60%20127%2C52%20128%2C46%20126%20C44%20125%2C44%20122%2C46%20121%20Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-secondary-container": "#342800",
-                    "secondary": "#e9c349",
-                    "inverse-primary": "#46645e",
-                    "outline-variant": "#414846",
-                    "on-primary": "#173630",
-                    "on-secondary-fixed-variant": "#574500",
-                    "on-error-container": "#ffdad6",
-                    "on-secondary-fixed": "#241a00",
-                    "tertiary": "#c8c6c5",
-                    "on-primary-container": "#74948d",
-                    "surface-container": "#1e201d",
-                    "on-tertiary": "#313030",
-                    "surface-dim": "#121411",
-                    "error-container": "#93000a",
-                    "inverse-on-surface": "#2f312e",
-                    "tertiary-container": "#262626",
-                    "surface-container-high": "#292a27",
-                    "on-secondary": "#3c2f00",
-                    "surface": "#121411",
-                    "primary": "#accdc5",
-                    "surface-tint": "#accdc5",
-                    "inverse-surface": "#e3e3de",
-                    "surface-container-highest": "#333532",
-                    "secondary-container": "#af8d11",
-                    "surface-container-low": "#1a1c19",
-                    "on-primary-fixed-variant": "#2e4c46",
-                    "tertiary-fixed": "#e5e2e1",
-                    "on-surface": "#e3e3de",
-                    "primary-fixed-dim": "#accdc5",
-                    "background": "#121411",
-                    "on-surface-variant": "#c1c8c5",
-                    "primary-container": "#0b2b26",
-                    "on-tertiary-fixed": "#1c1b1b",
-                    "on-error": "#690005",
-                    "on-tertiary-container": "#8e8d8c",
-                    "secondary-fixed": "#ffe088",
-                    "on-primary-fixed": "#00201c",
-                    "tertiary-fixed-dim": "#c8c6c5",
-                    "primary-fixed": "#c8eae1",
-                    "outline": "#8b9290",
-                    "on-tertiary-fixed-variant": "#474746",
-                    "surface-variant": "#333532",
-                    "secondary-fixed-dim": "#e9c349",
-                    "surface-bright": "#383a36",
-                    "error": "#ffb4ab",
-                    "surface-container-lowest": "#0d0f0c",
-                    "on-background": "#e3e3de"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "margin-mobile": "16px",
-                    "margin-desktop": "64px",
-                    "unit": "8px",
-                    "gutter": "24px",
-                    "container-max": "1200px"
-            },
-            "fontFamily": {
-                    "poem-title": ["\"Source Serif 4\""],
-                    "ui-label-sm": ["Hanken Grotesk"],
-                    "body-main": ["Hanken Grotesk"],
-                    "ui-label-lg": ["Hanken Grotesk"],
-                    "poem-body": ["\"Source Serif 4\""],
-                    "display-lg": ["\"Source Serif 4\""],
-                    "display-lg-mobile": ["\"Source Serif 4\""]
-            },
-            "fontSize": {
-                    "poem-title": ["36px", {"lineHeight": "44px", "fontWeight": "600"}],
-                    "ui-label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
-                    "body-main": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "ui-label-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "poem-body": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
-            }
-          },
-        },
-      }
+      tailwind.config = { darkMode: "class", theme: { extend: {
+        colors: { "secondary":"#e9c349","on-secondary":"#3c2f00","tertiary":"#c8c6c5","on-primary-container":"#74948d","surface-container":"#1e201d","surface-container-high":"#292a27","surface":"#121411","primary":"#accdc5","secondary-container":"#af8d11","surface-container-low":"#1a1c19","on-surface":"#e3e3de","background":"#121411","on-surface-variant":"#c1c8c5","primary-container":"#0b2b26","on-tertiary-container":"#8e8d8c","outline":"#8b9290","surface-variant":"#333532","surface-container-highest":"#333532","surface-container-lowest":"#0d0f0c","on-background":"#e3e3de" },
+        borderRadius: { "DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px" },
+        spacing: { "margin-mobile":"16px","margin-desktop":"64px","unit":"8px","gutter":"24px","container-max":"1200px" },
+        fontFamily: { "poem-title":["Source Serif 4"],"ui-label-sm":["Hanken Grotesk"],"body-main":["Hanken Grotesk"],"ui-label-lg":["Hanken Grotesk"],"poem-body":["Source Serif 4"],"display-lg":["Source Serif 4"],"display-lg-mobile":["Source Serif 4"] },
+        fontSize: { "poem-title":["36px",{"lineHeight":"44px","fontWeight":"600"}],"ui-label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.1em","fontWeight":"500"}],"body-main":["16px",{"lineHeight":"24px","fontWeight":"400"}],"ui-label-lg":["16px",{"lineHeight":"24px","letterSpacing":"0.05em","fontWeight":"600"}],"poem-body":["20px",{"lineHeight":"32px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["32px",{"lineHeight":"40px","fontWeight":"700"}] }
+      } } };
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .pattern-overlay {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-        .grain {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-        .masonry-line {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
-        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .pattern-overlay { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"); }
+        .grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+        .masonry-line { height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent); }
     </style>
 </head>
 <body class="bg-background text-on-surface selection:bg-secondary/30">
 <div class="grain"></div>
+<svg width="0" height="0" class="absolute overflow-hidden" aria-hidden="true"><symbol id="emblem" viewBox="0 0 240 240">
+<circle cx="120" cy="120" r="118" fill="#0b2b26"/>
+<circle cx="120" cy="120" r="118" fill="none" stroke="#e9c349" stroke-opacity="0.5" stroke-width="4"/>
+<g fill="#e9c349">
+<path id="emblemStar" d="M120 40 l2.1 6.4 6.7 0 -5.4 4 2.1 6.4 -5.5-4 -5.5 4 2.1-6.4 -5.4-4 6.7 0z"/>
+<use href="#emblemStar" transform="rotate(-20 120 120)"/><use href="#emblemStar" transform="rotate(-40 120 120)"/><use href="#emblemStar" transform="rotate(-60 120 120)"/><use href="#emblemStar" transform="rotate(-80 120 120)"/><use href="#emblemStar" transform="rotate(20 120 120)"/><use href="#emblemStar" transform="rotate(40 120 120)"/><use href="#emblemStar" transform="rotate(60 120 120)"/><use href="#emblemStar" transform="rotate(80 120 120)"/>
+</g>
+<path fill="#accdc5" d="M46 121 C52 119,58 117,62 113 L60 96 L70 109 L80 95 L87 110 C92 112,96 115,99 119 C116 112,138 111,156 116 C159 110,162 103,161 96 C165 100,168 106,168 112 C174 114,180 118,184 124 C188 130,188 137,184 142 C182 145,178 145,176 142 L174 134 L172 145 L172 173 L164 173 L165 145 C160 147,154 148,148 147 L132 146 C128 146,124 146,120 145 L120 173 L112 173 L113 143 C108 141,104 138,101 134 L100 145 L100 173 L92 173 L93 143 C88 139,85 133,84 127 C78 127,72 126,67 123 C60 127,52 128,46 126 C44 125,44 122,46 121 Z"/>
+</symbol></svg>
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-background dark:bg-background border-b border-secondary/20 flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<header class="fixed top-0 w-full z-50 bg-background border-b border-secondary/20 flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
 <div class="flex items-center gap-4">
-<div class="w-10 h-10 overflow-hidden rounded-lg">
-<a href="index.html"><img class="w-full h-full object-cover" src="assets/logo.svg"/></a>
-</div>
-<a href="index.html"><h1 class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary dark:text-primary">NOHCHICHO</h1></a>
+<a href="index.html"><svg class="w-10 h-10" aria-label="Nohchicho emblem"><use href="#emblem"/></svg></a>
+<a href="index.html"><h1 class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary">NOHCHICHO</h1></a>
 </div>
 <nav class="hidden md:flex gap-8 items-center">
 <a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer active:opacity-70" href="index.html">Home</a>
 <a class="font-ui-label-lg text-ui-label-lg text-secondary after:content-['•'] after:block after:text-[8px] after:text-center cursor-pointer active:opacity-70" href="library.html">Library</a>
-<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer active:opacity-70" href="#">Favorites</a>
-<a href="search.html"><span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70" data-icon="search">search</span></a>
+<a class="font-ui-label-lg text-ui-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-300 cursor-pointer active:opacity-70" href="search.html">Favorites</a>
+<a href="search.html"><span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70">search</span></a>
 </nav>
 <div class="md:hidden">
-<a href="search.html"><span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span></a>
+<a href="search.html"><span class="material-symbols-outlined text-primary">menu_book</span></a>
 </div>
 </header>
 <main class="pt-32 pb-32 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop min-h-screen">
@@ -148,84 +59,82 @@
 <p class="font-body-main text-body-main text-on-surface-variant opacity-80 leading-relaxed">A curated anthology preserving the poetic heritage of Chechnya. From the rhythmic echo of ancient towers to the contemporary verses of survival, each collection serves as a witness to the unbreakable spirit of Nohchicho.</p>
 </div>
 <div class="flex flex-col items-start md:items-end gap-2">
-<span class="font-ui-label-sm text-ui-label-sm text-secondary uppercase tracking-[0.2em]">Total Archives</span>
-<span class="font-poem-title text-poem-title text-on-surface">1,402</span>
+<span class="font-ui-label-sm text-ui-label-sm text-secondary uppercase tracking-[0.2em]">Poems in the Anthology</span>
+<span class="font-poem-title text-poem-title text-on-surface">2</span>
 </div>
 </section>
-<!-- Bento Grid Collections -->
+<!-- Bento Grid: the two poems -->
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<!-- Category 1: Large Featured -->
-<a href="poem.html" class="md:col-span-8 group relative overflow-hidden bg-surface-container-low border border-secondary/20 p-8 md:p-12 transition-all duration-500 hover:border-secondary/40 cursor-pointer block">
+<!-- Poem 1: Large Featured -->
+<a href="poem.html?p=0" class="md:col-span-8 group relative overflow-hidden bg-surface-container-low border border-secondary/20 p-8 md:p-12 transition-all duration-500 hover:border-secondary/40 cursor-pointer block">
 <div class="pattern-overlay absolute inset-0 pointer-events-none opacity-20"></div>
 <div class="relative z-10 h-full flex flex-col justify-between">
 <div>
 <div class="flex items-center gap-3 mb-6">
 <span class="h-[1px] w-12 bg-secondary/30"></span>
-<span class="font-ui-label-sm text-ui-label-sm text-secondary">COLLECTION I</span>
+<span class="font-ui-label-sm text-ui-label-sm text-secondary">POEM I · Умар Яричев</span>
 </div>
-<h3 class="font-poem-title text-poem-title md:text-5xl text-on-surface mb-4">Classic Verses</h3>
-<p class="font-body-main text-body-main text-on-surface-variant max-w-md">The core of our literary identity. Masterpieces from the 18th and 19th centuries that shaped the national consciousness.</p>
+<h3 class="font-poem-title text-poem-title md:text-5xl text-on-surface mb-4">Чеченец</h3>
+<p class="font-poem-body italic text-body-main text-on-surface-variant max-w-md">Чеченец я, не просто человек — я из титана сделан, не из плоти.</p>
 </div>
 <div class="mt-12 flex items-center justify-between">
 <div class="flex gap-2">
-<span class="px-3 py-1 bg-surface-container-high text-on-tertiary-container font-ui-label-sm text-[10px] uppercase tracking-widest rounded-full">Archive</span>
-<span class="px-3 py-1 bg-surface-container-high text-on-tertiary-container font-ui-label-sm text-[10px] uppercase tracking-widest rounded-full">Imperial Era</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-tertiary-container font-ui-label-sm text-[10px] uppercase tracking-widest rounded-full">Modern Resistance</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-tertiary-container font-ui-label-sm text-[10px] uppercase tracking-widest rounded-full">Chechen War</span>
 </div>
 <span class="font-ui-label-lg text-ui-label-lg text-secondary group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
-                            Explore 482 Poems
-                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                            Read the poem
+                            <span class="material-symbols-outlined">arrow_forward</span>
 </span>
 </div>
 </div>
 </a>
-<!-- Category 2: Small Vertical -->
-<a href="poem.html" class="md:col-span-4 group relative overflow-hidden bg-surface-container border border-secondary/10 p-8 transition-all duration-500 hover:bg-surface-container-high cursor-pointer block">
+<!-- Poem 2: Small Vertical -->
+<a href="poem.html?p=1" class="md:col-span-4 group relative overflow-hidden bg-surface-container border border-secondary/10 p-8 transition-all duration-500 hover:bg-surface-container-high cursor-pointer block">
 <div class="relative z-10 flex flex-col h-full">
-<span class="font-ui-label-sm text-ui-label-sm text-secondary/60 mb-6">COLLECTION II</span>
-<h3 class="font-poem-title text-2xl text-on-surface mb-4">Oral Traditions</h3>
-<p class="font-body-main text-sm text-on-surface-variant mb-auto opacity-70">Transcribed Illy ballads and folk legends passed through generations of mountain elders.</p>
+<span class="font-ui-label-sm text-ui-label-sm text-secondary/60 mb-6">POEM II · Хамзат Ханкаров</span>
+<h3 class="font-poem-title text-2xl text-on-surface mb-4">Гимн Кавказа</h3>
+<p class="font-body-main text-sm text-on-surface-variant mb-auto opacity-70">A rallying anthem of Caucasian solidarity — "Freedom or death" as an inherited duty.</p>
 <div class="mt-8 pt-6 border-t border-secondary/10">
 <div class="flex justify-between items-center text-secondary">
-<span class="font-ui-label-sm text-[10px] tracking-widest">312 ENTRIES</span>
-<span class="material-symbols-outlined text-lg" data-icon="history_edu">history_edu</span>
+<span class="font-ui-label-sm text-[10px] tracking-widest">CAUCASUS · ANTHEM</span>
+<span class="material-symbols-outlined text-lg">history_edu</span>
 </div>
 </div>
 </div>
 </a>
-<!-- Category 3: Small Vertical -->
+<!-- Read all -->
 <a href="poem.html" class="md:col-span-4 group relative overflow-hidden bg-surface-container border border-secondary/10 p-8 transition-all duration-500 hover:bg-surface-container-high cursor-pointer block">
 <div class="relative z-10 flex flex-col h-full">
-<span class="font-ui-label-sm text-ui-label-sm text-secondary/60 mb-6">COLLECTION III</span>
-<h3 class="font-poem-title text-2xl text-on-surface mb-4">Modern Resistance</h3>
-<p class="font-body-main text-sm text-on-surface-variant mb-auto opacity-70">Powerful contemporary voices chronicling the struggle, exile, and the longing for home.</p>
+<span class="font-ui-label-sm text-ui-label-sm text-secondary/60 mb-6">THE READER</span>
+<h3 class="font-poem-title text-2xl text-on-surface mb-4">Open the Anthology</h3>
+<p class="font-body-main text-sm text-on-surface-variant mb-auto opacity-70">Read every poem in one place — slide through the collection and search the verses.</p>
 <div class="mt-8 pt-6 border-t border-secondary/10">
 <div class="flex justify-between items-center text-secondary">
-<span class="font-ui-label-sm text-[10px] tracking-widest">520 ENTRIES</span>
-<span class="material-symbols-outlined text-lg" data-icon="auto_stories">auto_stories</span>
+<span class="font-ui-label-sm text-[10px] tracking-widest">ALL POEMS</span>
+<span class="material-symbols-outlined text-lg">auto_stories</span>
 </div>
 </div>
 </div>
 </a>
-<!-- Category 4: Large Featured Asymmetric -->
-<div class="md:col-span-8 group relative overflow-hidden bg-primary-container border border-secondary/20 p-8 md:p-12 transition-all duration-500 hover:border-secondary/50 cursor-pointer">
+<!-- Global tributes callout -->
+<div class="md:col-span-8 group relative overflow-hidden bg-primary-container border border-secondary/20 p-8 md:p-12 transition-all duration-500 hover:border-secondary/50">
 <div class="absolute inset-0 opacity-10 flex items-center justify-center">
-<span class="material-symbols-outlined text-[20rem] text-secondary" data-icon="public">public</span>
+<svg class="w-72 h-72"><use href="#emblem"/></svg>
 </div>
 <div class="relative z-10 h-full flex flex-col md:flex-row gap-8 justify-between items-center">
 <div class="flex-1">
 <span class="font-ui-label-sm text-ui-label-sm text-secondary/80 mb-4 block">GLOBAL PERSPECTIVE</span>
 <h3 class="font-poem-title text-poem-title text-on-surface mb-4">International Tributes</h3>
-<p class="font-body-main text-body-main text-on-primary-container/80 leading-relaxed mb-6">
-                            A testament to universal solidarity. Poems and essays dedicated to the Caucasian spirit by global authors.
-                        </p>
-<a href="poem.html"><button class="bg-secondary text-on-secondary font-ui-label-lg px-8 py-3 rounded-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-secondary/10 flex items-center gap-3">
-                            OPEN THE ARCHIVE
-                            <span class="material-symbols-outlined text-sm" data-icon="folder_special">folder_special</span>
+<p class="font-body-main text-body-main text-on-primary-container/80 leading-relaxed mb-6">Voices from Pushkin to Tolstoy who turned the Caucasus into verse. A testament to universal solidarity with the mountain spirit.</p>
+<a href="index.html#global"><button class="bg-secondary text-on-secondary font-ui-label-lg px-8 py-3 rounded-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-secondary/10 flex items-center gap-3">
+                            EXPLORE VOICES
+                            <span class="material-symbols-outlined text-sm">folder_special</span>
 </button></a>
 </div>
 <div class="flex-shrink-0 text-center">
-<div class="text-secondary font-display-lg text-4xl mb-1">88</div>
-<div class="font-ui-label-sm text-[10px] tracking-widest text-on-primary-container uppercase">Poets</div>
+<div class="text-secondary font-display-lg text-4xl mb-1">3</div>
+<div class="font-ui-label-sm text-[10px] tracking-widest text-on-primary-container uppercase">Voices</div>
 </div>
 </div>
 </div>
@@ -233,71 +142,51 @@
 <!-- Decorative Section Break -->
 <div class="mt-24 mb-16 flex flex-col items-center gap-4 opacity-30">
 <div class="masonry-line w-full"></div>
-<span class="material-symbols-outlined text-secondary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
 <div class="masonry-line w-full"></div>
 </div>
 <!-- Author Spotlight Callout -->
 <section class="bg-surface-container-highest/50 border border-secondary/5 p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center gap-12">
-<div class="w-full md:w-1/3 aspect-[3/4] relative overflow-hidden rounded-lg">
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>
-<img class="w-full h-full object-cover grayscale opacity-80" data-alt="A moody, high-contrast black and white portrait of a thoughtful Caucasian elder with a deep, weathered face, wearing a traditional dark papakha hat. The lighting is dramatic and directional, casting shadows that emphasize a life of resilience. The aesthetic is clean, editorial, and sophisticated, mirroring a modern heritage brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3sXJ2PXlY5xBT5zo1pVtxUMrZW-pCL8MfkWNO2Kz20hN8UkOuEIdkr2xn7SNLMtfM50tGtNFYApx-DfreLbW_D2-aTDUBiMbD0uCbHlImMybrjoiKu6snexR-KX5iRmGIPG6lsSNM5P0Sfkojtn1TuW46S84bE1uaQpiUMGsh4S7M90AMku6N6TGlIMQMarqCZ4YIQ65EpVVn-0tEW8xKDgqNtAQzPtaw7pq-jGpNZZQKq23LU1lJAczwi5k2QDm0Br32-9iqEta4"/>
+<div class="w-full md:w-1/3 aspect-[3/4] relative overflow-hidden rounded-lg bg-primary-container flex items-center justify-center border border-secondary/20">
+<svg class="w-40 h-40 opacity-80"><use href="#emblem"/></svg>
 </div>
 <div class="flex-1">
 <span class="font-ui-label-sm text-secondary uppercase mb-4 block tracking-widest">Featured Author</span>
-<h4 class="font-display-lg text-3xl md:text-5xl text-on-surface mb-6">Apti Bisultanov</h4>
-<p class="font-poem-body text-on-surface-variant italic mb-8">
-                    "I will return to the mountains where the silence has a name, and the name is the heart of my people..."
-                </p>
+<h4 class="font-display-lg text-3xl md:text-5xl text-on-surface mb-6">Умар Яричев</h4>
+<p class="font-poem-body text-on-surface-variant italic mb-8">"Чеченец я, не просто человек — я из титана сделан, не из плоти."</p>
 <div class="flex gap-4">
-<a class="font-ui-label-lg text-secondary border-b border-secondary/30 hover:border-secondary transition-all" href="poem.html">View Bibliography</a>
+<a class="font-ui-label-lg text-secondary border-b border-secondary/30 hover:border-secondary transition-all" href="poem.html?p=0">Read «Чеченец»</a>
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-secondary/10 w-full py-12 px-margin-mobile md:px-margin-desktop">
+<footer class="bg-surface-container-lowest border-t border-secondary/10 w-full py-12 px-margin-mobile md:px-margin-desktop">
 <div class="flex flex-col items-center gap-unit text-center max-w-container-max mx-auto">
-<div class="w-16 h-16 overflow-hidden rounded-lg mb-4 mx-auto"><img alt="Nohchicho Emblem" class="w-full h-full object-cover" src="assets/logo.svg"/></div><h2 class="font-display-lg text-display-lg-mobile text-secondary opacity-50">NOHCHICHO</h2>
+<svg class="w-16 h-16 mb-4"><use href="#emblem"/></svg>
+<h2 class="font-display-lg text-display-lg-mobile text-secondary opacity-50">NOHCHICHO</h2>
 <p class="font-ui-label-sm text-ui-label-sm text-on-tertiary-container mt-4">© 2024 Nohchicho Anthology. Dedicated to the resilience of the Chechen spirit.</p>
 <div class="flex gap-8 mt-6">
 <a class="font-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="#">History</a>
 <a class="font-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="#">Tradition</a>
 <a class="font-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="library.html">Authors</a>
-<a class="font-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="library.html">Archives</a>
+<a class="font-ui-label-sm text-on-tertiary-container hover:text-primary underline transition-all" href="poem.html">Archives</a>
 </div>
 </div>
 </footer>
 <!-- Mobile Navigation Shell -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe bg-surface-container dark:bg-surface-container z-50">
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 pb-safe bg-surface-container z-50">
 <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-95 duration-200" href="index.html">
-<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="material-symbols-outlined">home</span>
 <span class="font-ui-label-sm text-ui-label-sm">Home</span>
 </a>
 <a class="flex flex-col items-center justify-center text-secondary font-bold hover:text-primary transition-all active:scale-95 duration-200" href="library.html">
-<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="material-symbols-outlined">local_library</span>
 <span class="font-ui-label-sm text-ui-label-sm">Library</span>
 </a>
 <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-95 duration-200" href="search.html">
-<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="material-symbols-outlined">auto_awesome</span>
 <span class="font-ui-label-sm text-ui-label-sm">Favorites</span>
 </a>
 </nav>
-<script>
-        // Micro-interaction for category cards
-        document.querySelectorAll('.group').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                const icon = card.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    icon.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                    icon.style.transform = 'scale(1.2) rotate(5deg)';
-                }
-            });
-            card.addEventListener('mouseleave', () => {
-                const icon = card.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    icon.style.transform = 'scale(1) rotate(0deg)';
-                }
-            });
-        });
-    </script>
 </body></html>

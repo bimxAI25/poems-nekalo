@@ -1,6 +1,5 @@
-/* NOHCHICHO config + offline fallback. Paste PROJECT URL below (publishable
-   key already set). FALLBACK_POEMS shows only if Supabase is unreachable. */
-window.SUPABASE_URL = "";
+/* NOHCHICHO config + offline fallback poems. */
+window.SUPABASE_URL = "https://rrbrjdlrzuhwhoxgiyjr.supabase.co";
 window.SUPABASE_ANON_KEY = "sb_publishable_ra3D-YpVdF748B7md91nHA_2HKwNJr6";
 
 window.FALLBACK_POEMS = [
